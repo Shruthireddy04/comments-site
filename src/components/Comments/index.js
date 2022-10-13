@@ -64,20 +64,22 @@ class Comments extends Component {
         )
       ]
     }`
-    const newComment = {
-      id: v4(),
-      name: nameInput,
-      comment: commentInput,
-      date: new Date(),
-      isLiked: false,
-      initialClassName: initialBackgroundColorClassName,
-    }
+    if (nameInput !== '' && commentInput !== '') {
+      const newComment = {
+        id: v4(),
+        name: nameInput,
+        comment: commentInput,
+        date: new Date(),
+        isLiked: false,
+        initialClassName: initialBackgroundColorClassName,
+      }
 
-    this.setState(prevState => ({
-      commentsList: [...prevState.commentsList, newComment],
-      nameInput: '',
-      commentInput: '',
-    }))
+      this.setState(prevState => ({
+        commentsList: [...prevState.commentsList, newComment],
+        nameInput: '',
+        commentInput: '',
+      }))
+    }
   }
 
   onChangeCommentInput = event => {
