@@ -51,7 +51,6 @@ const CommentItem = props => {
           className="button"
           type="button"
           onClick={onDeleteComment}
-          testid="delete"
         >
           <img
             className="delete"
